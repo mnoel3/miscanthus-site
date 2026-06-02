@@ -1,274 +1,67 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Paillage Miscanthus | Direct producteur</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:Inter;
-  background:#0b1320;
-  color:white;
-}
-
-/* TOP BAR STYLE ANNONCE */
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 10%;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.logo img{
-  width:40px;
-  height:40px;
-  border-radius:8px;
-}
-
-.logo h1{
-  font-size:16px;
-  font-weight:600;
-}
-
-/* HERO SIMPLE PRO */
-.hero{
-  height:85vh;
-  background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80") center/cover;
-  display:flex;
-  align-items:flex-end;
-  padding:60px 10%;
-  position:relative;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);
-}
-
-.hero-content{
-  position:relative;
-  max-width:700px;
-}
-
-.hero h2{
-  font-family:"Playfair Display";
-  font-size:3rem;
-}
-
-.badge{
-  display:inline-block;
-  margin-top:10px;
-  background:#52b788;
-  padding:5px 12px;
-  border-radius:20px;
-  font-size:12px;
-}
-
-/* PRICE BLOCK */
-.price-box{
-  margin-top:15px;
-  font-size:2rem;
-  color:#52b788;
-  font-weight:bold;
-}
-
-/* BUTTONS */
-.buttons{
-  margin-top:20px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:12px 18px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.btn-green{
-  background:#40916c;
-  color:white;
-}
-
-.btn-outline{
-  background:transparent;
-  border:1px solid white;
-  color:white;
-}
-
-/* SECTION */
-section{
-  padding:80px 10%;
-}
-
-h3{
-  font-family:"Playfair Display";
-  font-size:2rem;
-  margin-bottom:25px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:12px;
-}
-
-/* CONTACT BOX */
-.contact{
-  background:rgba(255,255,255,0.06);
-  padding:20px;
-  border-radius:12px;
-}
-
-/* FLOAT ACTION BUTTON */
-.fab{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#52b788;
-  padding:15px 18px;
-  border-radius:50px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-</style>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miscanthus du Bas Bocage</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<!-- TOP -->
-<div class="topbar">
-  <div class="logo">
-    <img src="logo.png" alt="logo">
-    <h1>Paillage Miscanthus</h1>
-  </div>
-  <div>📍 Vente directe producteur</div>
+<header class="hero">
+<div class="overlay">
+<h1>Sublimez vos jardins, préservez notre eau</h1>
+<p>Paillage 100 % naturel, local et sans pesticides.</p>
+<a class="btn" href="#contact">Demander un devis</a>
 </div>
+</header>
 
-<!-- HERO -->
-<div class="hero">
+<nav>
+<a href="#avantages">Avantages</a>
+<a href="#tarifs">Tarifs</a>
+<a href="#galerie">Galerie</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  <div class="hero-content">
-
-    <h2>Paillage de Miscanthus</h2>
-
-    <span class="badge">🌿 100% naturel • Direct producteur</span>
-
-    <div class="price-box">
-      À partir de 5€
-    </div>
-
-    <div class="buttons">
-      <button class="btn btn-green" onclick="document.getElementById('contact').scrollIntoView()">
-        Commander
-      </button>
-
-      <button class="btn btn-outline" onclick="window.location.href='tel:+33XXXXXXXXX'">
-        Appeler
-      </button>
-
-      <button class="btn btn-outline" onclick="window.location.href='https://wa.me/33XXXXXXXXX'">
-        WhatsApp
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- AVANTAGES -->
-<section>
-<h3>Pourquoi ce paillage ?</h3>
-
-<div class="grid">
-
-  <div class="card">🌿 Naturel & sans traitement chimique</div>
-  <div class="card">💧 Réduction des mauvaises herbes</div>
-  <div class="card">🌡️ Protection du sol</div>
-  <div class="card">🚜 Direct producteur local</div>
-
+<section id="avantages" class="container">
+<h2>Pourquoi choisir le miscanthus ?</h2>
+<div class="cards">
+<div><h3>💧 Économie d'eau</h3><p>Réduit fortement les besoins d'arrosage.</p></div>
+<div><h3>🌱 Naturel</h3><p>Produit local sans pesticides.</p></div>
+<div><h3>🛡️ Protection</h3><p>Protège les plantations été comme hiver.</p></div>
+<div><h3>♻️ Durable</h3><p>Longue tenue et entretien réduit.</p></div>
 </div>
 </section>
 
-<!-- PRODUITS -->
-<section>
-<h3>Formats disponibles</h3>
-
-<div class="grid">
-
-  <div class="card">
-    <strong>Sac 50L</strong>
-    <p>5 €</p>
-  </div>
-
-  <div class="card">
-    <strong>Sac 80L</strong>
-    <p>8 €</p>
-  </div>
-
-  <div class="card">
-    <strong>Big bag 1m³</strong>
-    <p>Sur demande</p>
-  </div>
-
-</div>
+<section id="tarifs" class="container">
+<h2>Tarifs</h2>
+<table>
+<tr><th>Produit</th><th>Prix</th></tr>
+<tr><td>Vrac</td><td>40 € / m³</td></tr>
+<tr><td>Big Bag</td><td>50 € / m³</td></tr>
+<tr><td>Sac 18 kg (~110 L)</td><td>15 €</td></tr>
+</table>
+<p>Tarifs dégressifs sur quantité. Livraison possible sur devis.</p>
 </section>
 
-<!-- CONTACT / COMMANDE -->
-<section id="contact">
-
-<h3>Commande / Contact</h3>
-
-<div class="contact">
-
-  <p><strong>📍 Localisation :</strong> À compléter depuis ton annonce</p>
-  <p><strong>📞 Téléphone :</strong> À intégrer ici</p>
-  <p><strong>📧 Email :</strong> À intégrer ici</p>
-
-  <br>
-
-  <p>👉 Pour commander : appelez directement ou envoyez un message WhatsApp.</p>
-
-</div>
-
+<section id="galerie" class="container">
+<h2>Galerie</h2>
+<img src="assets/annonce.jpg" alt="Miscanthus" class="gallery">
 </section>
 
-<!-- FLOAT BUTTON -->
-<div class="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-↑ Haut
-</div>
+<section class="container">
+<h2>Le saviez-vous ?</h2>
+<p>Le miscanthus est très léger : environ 130 kg par m³. Facile à transporter et à manipuler.</p>
+</section>
 
-</body>
-</html>
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<p>📞 06 24 96 44 90 - 06 98 76 00 31</p>
+<p>📍 Maigre Souris, 85240 Foussais-Payré</p>
+<p>✉️ sceadubasbocage2@gmail.com</p>
+<form>
+<input placeholder="Nom">
+<input placeholder="Email">
+<textarea placeholder="Votre demande"></textarea>
+<button type="submit">Envoyer</button>
+</form>
+</section>
+</body></html>
