@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Miscanthus | Paillage premium direct producteur</title>
+<title>Paillage Miscanthus | Direct producteur</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
@@ -20,161 +20,147 @@ body{
   font-family:Inter;
   background:#0b1320;
   color:white;
-  overflow-x:hidden;
 }
 
-/* HERO ULTRA WOW */
-.hero{
-  height:100vh;
-  background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80") center/cover fixed;
+/* TOP BAR STYLE ANNONCE */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 10%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+}
+
+.logo{
   display:flex;
   align-items:center;
-  justify-content:center;
+  gap:10px;
+}
+
+.logo img{
+  width:40px;
+  height:40px;
+  border-radius:8px;
+}
+
+.logo h1{
+  font-size:16px;
+  font-weight:600;
+}
+
+/* HERO SIMPLE PRO */
+.hero{
+  height:85vh;
+  background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80") center/cover;
+  display:flex;
+  align-items:flex-end;
+  padding:60px 10%;
   position:relative;
-  text-align:center;
 }
 
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+  background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);
 }
 
 .hero-content{
   position:relative;
-  max-width:900px;
-  padding:20px;
-  animation:fadeIn 1.5s ease;
+  max-width:700px;
 }
 
-.hero h1{
+.hero h2{
   font-family:"Playfair Display";
-  font-size:4rem;
-}
-
-.hero p{
-  margin-top:20px;
-  font-size:1.2rem;
-  opacity:0.85;
-}
-
-.cta{
-  margin-top:30px;
-  padding:14px 28px;
-  border:none;
-  border-radius:50px;
-  background:#52b788;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.cta:hover{
-  transform:scale(1.05);
-}
-
-/* SECTION */
-section{
-  padding:100px 10%;
-}
-
-/* TITLE */
-h2{
-  font-family:"Playfair Display";
-  font-size:2.5rem;
-  margin-bottom:50px;
-}
-
-/* GRID CARDS WOW */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:18px;
-  backdrop-filter:blur(10px);
-  transition:.4s;
-  transform:translateY(40px);
-  opacity:0;
-}
-
-.card.visible{
-  transform:translateY(0);
-  opacity:1;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-}
-
-.card h3{
-  color:#95d5b2;
-  margin-bottom:10px;
-}
-
-/* PRICES BIG IMPACT */
-.price-section{
-  text-align:center;
-}
-
-.price{
   font-size:3rem;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:10px;
+  background:#52b788;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+/* PRICE BLOCK */
+.price-box{
+  margin-top:15px;
+  font-size:2rem;
   color:#52b788;
   font-weight:bold;
 }
 
-/* ORDER BLOCK */
-.order-box{
-  background:rgba(255,255,255,0.05);
-  padding:30px;
-  border-radius:20px;
-  max-width:600px;
-  margin:auto;
-  backdrop-filter:blur(10px);
+/* BUTTONS */
+.buttons{
+  margin-top:20px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
-input, select, textarea{
-  width:100%;
-  margin-top:10px;
-  padding:12px;
+.btn{
+  padding:12px 18px;
   border:none;
   border-radius:10px;
-  outline:none;
+  cursor:pointer;
+  font-weight:600;
 }
 
-button{
-  margin-top:15px;
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
+.btn-green{
   background:#40916c;
   color:white;
-  font-weight:bold;
+}
+
+.btn-outline{
+  background:transparent;
+  border:1px solid white;
+  color:white;
+}
+
+/* SECTION */
+section{
+  padding:80px 10%;
+}
+
+h3{
+  font-family:"Playfair Display";
+  font-size:2rem;
+  margin-bottom:25px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+}
+
+/* CONTACT BOX */
+.contact{
+  background:rgba(255,255,255,0.06);
+  padding:20px;
+  border-radius:12px;
+}
+
+/* FLOAT ACTION BUTTON */
+.fab{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#52b788;
+  padding:15px 18px;
+  border-radius:50px;
   cursor:pointer;
-}
-
-button:hover{
-  background:#2d6a4f;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:50px;
-  opacity:0.6;
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
+  font-weight:bold;
 }
 
 </style>
@@ -182,134 +168,107 @@ footer{
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <h1>Paillage de Miscanthus</h1>
-    <p>Solution naturelle premium – direct producteur – livraison locale</p>
-    <button class="cta" onclick="document.getElementById('order').scrollIntoView()">
-      Commander maintenant
-    </button>
+<!-- TOP -->
+<div class="topbar">
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+    <h1>Paillage Miscanthus</h1>
   </div>
+  <div>📍 Vente directe producteur</div>
 </div>
 
-<!-- BENEFITS -->
+<!-- HERO -->
+<div class="hero">
+
+  <div class="hero-content">
+
+    <h2>Paillage de Miscanthus</h2>
+
+    <span class="badge">🌿 100% naturel • Direct producteur</span>
+
+    <div class="price-box">
+      À partir de 5€
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-green" onclick="document.getElementById('contact').scrollIntoView()">
+        Commander
+      </button>
+
+      <button class="btn btn-outline" onclick="window.location.href='tel:+33XXXXXXXXX'">
+        Appeler
+      </button>
+
+      <button class="btn btn-outline" onclick="window.location.href='https://wa.me/33XXXXXXXXX'">
+        WhatsApp
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- AVANTAGES -->
 <section>
-<h2>Pourquoi choisir notre paillage ?</h2>
+<h3>Pourquoi ce paillage ?</h3>
+
+<div class="grid">
+
+  <div class="card">🌿 Naturel & sans traitement chimique</div>
+  <div class="card">💧 Réduction des mauvaises herbes</div>
+  <div class="card">🌡️ Protection du sol</div>
+  <div class="card">🚜 Direct producteur local</div>
+
+</div>
+</section>
+
+<!-- PRODUITS -->
+<section>
+<h3>Formats disponibles</h3>
 
 <div class="grid">
 
   <div class="card">
-    <h3>🌿 100% naturel</h3>
-    <p>Sans traitement chimique, respectueux des sols.</p>
+    <strong>Sac 50L</strong>
+    <p>5 €</p>
   </div>
 
   <div class="card">
-    <h3>💧 Anti-mauvaises herbes</h3>
-    <p>Réduit fortement la pousse des adventices.</p>
+    <strong>Sac 80L</strong>
+    <p>8 €</p>
   </div>
 
   <div class="card">
-    <h3>🌡️ Protection du sol</h3>
-    <p>Maintien humidité + protection thermique.</p>
-  </div>
-
-  <div class="card">
-    <h3>🚜 Direct producteur</h3>
-    <p>Sans intermédiaires, prix justes.</p>
+    <strong>Big bag 1m³</strong>
+    <p>Sur demande</p>
   </div>
 
 </div>
 </section>
 
-<!-- PRICES -->
-<section class="price-section">
-<h2>Tarifs simples et transparents</h2>
+<!-- CONTACT / COMMANDE -->
+<section id="contact">
 
-<p class="price">À partir de 5€</p>
-<p>Selon format et volume</p>
-</section>
+<h3>Commande / Contact</h3>
 
-<!-- ORDER -->
-<section id="order">
+<div class="contact">
 
-<h2>Commander</h2>
+  <p><strong>📍 Localisation :</strong> À compléter depuis ton annonce</p>
+  <p><strong>📞 Téléphone :</strong> À intégrer ici</p>
+  <p><strong>📧 Email :</strong> À intégrer ici</p>
 
-<div class="order-box">
+  <br>
 
-  <input id="name" placeholder="Nom / Entreprise">
-  <input id="email" placeholder="Email">
-  <input id="phone" placeholder="Téléphone">
-
-  <select id="product">
-    <option>Sac 50L - 5€</option>
-    <option>Sac 80L - 8€</option>
-    <option>Big bag 1m³</option>
-  </select>
-
-  <input id="qty" type="number" placeholder="Quantité">
-
-  <textarea id="address" placeholder="Adresse de livraison"></textarea>
-
-  <button onclick="send()">Valider la commande</button>
+  <p>👉 Pour commander : appelez directement ou envoyez un message WhatsApp.</p>
 
 </div>
 
 </section>
 
-<footer>
-Miscanthus – paillage naturel direct producteur
-</footer>
-
-<script>
-
-// scroll animation
-const cards=document.querySelectorAll(".card");
-
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add("visible");
-    }
-  });
-},{threshold:0.2});
-
-cards.forEach(c=>obs.observe(c));
-
-// simple order system (QUI MARCHE)
-function send(){
-
-  const data={
-    name:document.getElementById("name").value,
-    email:document.getElementById("email").value,
-    phone:document.getElementById("phone").value,
-    product:document.getElementById("product").value,
-    qty:document.getElementById("qty").value,
-    address:document.getElementById("address").value
-  };
-
-  if(!data.name || !data.phone){
-    alert("Merci de remplir les champs obligatoires");
-    return;
-  }
-
-  const text =
-`Nouvelle commande Miscanthus:
-
-Nom: ${data.name}
-Email: ${data.email}
-Téléphone: ${data.phone}
-Produit: ${data.product}
-Quantité: ${data.qty}
-Adresse: ${data.address}`;
-
-  console.log(text);
-
-  alert("Commande enregistrée ✔ Nous vous contacterons rapidement.");
-
-}
-
-</script>
+<!-- FLOAT BUTTON -->
+<div class="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑ Haut
+</div>
 
 </body>
 </html>
