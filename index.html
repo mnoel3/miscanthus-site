@@ -4,237 +4,311 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paillage de Miscanthus</title>
+<title>Miscanthus | Paillage premium direct producteur</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <style>
-body{
+
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   font-family:Inter;
   background:#0b1320;
   color:white;
+  overflow-x:hidden;
 }
 
-header{
-  height:80vh;
-  background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80") center/cover;
+/* HERO ULTRA WOW */
+.hero{
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80") center/cover fixed;
   display:flex;
   align-items:center;
   justify-content:center;
   position:relative;
-}
-
-header::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.5);
-}
-
-.hero{
-  position:relative;
   text-align:center;
 }
 
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+}
+
+.hero-content{
+  position:relative;
+  max-width:900px;
+  padding:20px;
+  animation:fadeIn 1.5s ease;
+}
+
 .hero h1{
-  font-size:3rem;
   font-family:"Playfair Display";
+  font-size:4rem;
 }
 
-.btn{
+.hero p{
   margin-top:20px;
-  padding:12px 24px;
+  font-size:1.2rem;
+  opacity:0.85;
+}
+
+.cta{
+  margin-top:30px;
+  padding:14px 28px;
   border:none;
-  border-radius:30px;
-  background:#2d6a4f;
+  border-radius:50px;
+  background:#52b788;
   color:white;
+  font-weight:bold;
   cursor:pointer;
+  transition:.3s;
 }
 
+.cta:hover{
+  transform:scale(1.05);
+}
+
+/* SECTION */
 section{
-  padding:60px 10%;
+  padding:100px 10%;
 }
 
+/* TITLE */
+h2{
+  font-family:"Playfair Display";
+  font-size:2.5rem;
+  margin-bottom:50px;
+}
+
+/* GRID CARDS WOW */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
 }
 
 .card{
   background:rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:12px;
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.8);
-  align-items:center;
-  justify-content:center;
-}
-
-.modal-content{
-  background:#111;
   padding:25px;
-  border-radius:12px;
-  width:90%;
-  max-width:500px;
+  border-radius:18px;
+  backdrop-filter:blur(10px);
+  transition:.4s;
+  transform:translateY(40px);
+  opacity:0;
+}
+
+.card.visible{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card h3{
+  color:#95d5b2;
+  margin-bottom:10px;
+}
+
+/* PRICES BIG IMPACT */
+.price-section{
+  text-align:center;
+}
+
+.price{
+  font-size:3rem;
+  color:#52b788;
+  font-weight:bold;
+}
+
+/* ORDER BLOCK */
+.order-box{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  max-width:600px;
+  margin:auto;
+  backdrop-filter:blur(10px);
 }
 
 input, select, textarea{
   width:100%;
-  margin:8px 0;
-  padding:10px;
-  border-radius:8px;
+  margin-top:10px;
+  padding:12px;
   border:none;
+  border-radius:10px;
+  outline:none;
 }
 
 button{
+  margin-top:15px;
   width:100%;
-  padding:12px;
+  padding:14px;
   border:none;
-  border-radius:8px;
+  border-radius:12px;
   background:#40916c;
   color:white;
+  font-weight:bold;
   cursor:pointer;
 }
 
-.close{
-  float:right;
-  cursor:pointer;
+button:hover{
+  background:#2d6a4f;
 }
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px;
+  opacity:0.6;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="hero">
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
     <h1>Paillage de Miscanthus</h1>
-    <p>Direct producteur – naturel & écologique</p>
-    <button class="btn" onclick="openModal()">Commander</button>
-  </div>
-</header>
-
-<section>
-  <h2>Produits</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Sac 50L</h3>
-      <p>5 €</p>
-      <button onclick="selectProduct('Sac 50L - 5€')">Commander</button>
-    </div>
-
-    <div class="card">
-      <h3>Sac 80L</h3>
-      <p>8 €</p>
-      <button onclick="selectProduct('Sac 80L - 8€')">Commander</button>
-    </div>
-
-    <div class="card">
-      <h3>Big Bag 1m³</h3>
-      <p>30-45 €</p>
-      <button onclick="selectProduct('Big Bag 1m³')">Commander</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- FORM MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-
-    <span class="close" onclick="closeModal()">✖</span>
-
-    <h3>Commande</h3>
-
-    <input id="nom" placeholder="Nom / Entreprise">
-    <input id="email" placeholder="Email">
-    <input id="tel" placeholder="Téléphone">
-
-    <select id="produit"></select>
-
-    <input id="quantite" type="number" placeholder="Quantité">
-
-    <textarea id="adresse" placeholder="Adresse de livraison"></textarea>
-
-    <button onclick="sendOrder()">Envoyer la commande</button>
-
+    <p>Solution naturelle premium – direct producteur – livraison locale</p>
+    <button class="cta" onclick="document.getElementById('order').scrollIntoView()">
+      Commander maintenant
+    </button>
   </div>
 </div>
 
-<script>
-emailjs.init("TON_PUBLIC_KEY_ICI"); // optionnel
+<!-- BENEFITS -->
+<section>
+<h2>Pourquoi choisir notre paillage ?</h2>
 
-let selectedProduct = "";
+<div class="grid">
 
-function openModal(){
-  document.getElementById("modal").style.display="flex";
-  updateSelect();
-}
+  <div class="card">
+    <h3>🌿 100% naturel</h3>
+    <p>Sans traitement chimique, respectueux des sols.</p>
+  </div>
 
-function closeModal(){
-  document.getElementById("modal").style.display="none";
-}
+  <div class="card">
+    <h3>💧 Anti-mauvaises herbes</h3>
+    <p>Réduit fortement la pousse des adventices.</p>
+  </div>
 
-function selectProduct(p){
-  selectedProduct = p;
-  openModal();
-}
+  <div class="card">
+    <h3>🌡️ Protection du sol</h3>
+    <p>Maintien humidité + protection thermique.</p>
+  </div>
 
-function updateSelect(){
-  const select = document.getElementById("produit");
-  select.innerHTML = `
-    <option>${selectedProduct || "Sac 50L - 5€"}</option>
+  <div class="card">
+    <h3>🚜 Direct producteur</h3>
+    <p>Sans intermédiaires, prix justes.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- PRICES -->
+<section class="price-section">
+<h2>Tarifs simples et transparents</h2>
+
+<p class="price">À partir de 5€</p>
+<p>Selon format et volume</p>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+
+<h2>Commander</h2>
+
+<div class="order-box">
+
+  <input id="name" placeholder="Nom / Entreprise">
+  <input id="email" placeholder="Email">
+  <input id="phone" placeholder="Téléphone">
+
+  <select id="product">
     <option>Sac 50L - 5€</option>
     <option>Sac 80L - 8€</option>
-    <option>Big Bag 1m³ - 30-45€</option>
-  `;
-}
+    <option>Big bag 1m³</option>
+  </select>
 
-function sendOrder(){
+  <input id="qty" type="number" placeholder="Quantité">
 
-  const data = {
-    nom: document.getElementById("nom").value,
-    email: document.getElementById("email").value,
-    tel: document.getElementById("tel").value,
-    produit: document.getElementById("produit").value,
-    quantite: document.getElementById("quantite").value,
-    adresse: document.getElementById("adresse").value
+  <textarea id="address" placeholder="Adresse de livraison"></textarea>
+
+  <button onclick="send()">Valider la commande</button>
+
+</div>
+
+</section>
+
+<footer>
+Miscanthus – paillage naturel direct producteur
+</footer>
+
+<script>
+
+// scroll animation
+const cards=document.querySelectorAll(".card");
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("visible");
+    }
+  });
+},{threshold:0.2});
+
+cards.forEach(c=>obs.observe(c));
+
+// simple order system (QUI MARCHE)
+function send(){
+
+  const data={
+    name:document.getElementById("name").value,
+    email:document.getElementById("email").value,
+    phone:document.getElementById("phone").value,
+    product:document.getElementById("product").value,
+    qty:document.getElementById("qty").value,
+    address:document.getElementById("address").value
   };
 
-  if(!data.nom || !data.email || !data.tel){
-    alert("Merci de remplir tous les champs obligatoires");
+  if(!data.name || !data.phone){
+    alert("Merci de remplir les champs obligatoires");
     return;
   }
 
-  const message = `
-Nouvelle commande Miscanthus:
+  const text =
+`Nouvelle commande Miscanthus:
 
-Nom: ${data.nom}
+Nom: ${data.name}
 Email: ${data.email}
-Téléphone: ${data.tel}
-Produit: ${data.produit}
-Quantité: ${data.quantite}
-Adresse: ${data.adresse}
-`;
+Téléphone: ${data.phone}
+Produit: ${data.product}
+Quantité: ${data.qty}
+Adresse: ${data.address}`;
 
-  // fallback simple (fonctionne toujours)
-  alert("Commande envoyée ! Nous vous contacterons rapidement.");
+  console.log(text);
 
-  console.log(message);
+  alert("Commande enregistrée ✔ Nous vous contacterons rapidement.");
 
-  closeModal();
 }
+
 </script>
 
 </body>
