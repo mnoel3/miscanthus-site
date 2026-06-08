@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang='fr'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>Miscanthus - SCEA du Bas Bocage</title>
+    <link rel='stylesheet' href='style.css'>
+    <style>
+        /* --- Style global pour le fond du site --- */
+        body {
+            background: url('fond.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Enveloppe transparente pour garantir la lisibilité --- */
+        .content-bg-overlay {
+            background-color: rgba(255, 255, 255, 0.92); /* Voile blanc pour faire ressortir le texte du fond général */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* --- Style spécifique pour la grande bannière Hero du haut --- */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('miscanthus-paysage.jpg') no-repeat center center/cover;
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .hero h2 {
+            color: #1b5e20;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2:first-of-type {
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 500;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2e7d32;
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        /* --- Style pour la deuxième section (Pourquoi choisir le miscanthus) --- */
+        .why-miscanthus-section {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .why-miscanthus-section h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 25px 20px;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* --- Section Produits (Cards) --- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+
+        .card h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        /* --- Structure globale --- */
+        .container {
+            max-width: 1200px; /* Élargi pour accueillir confortablement le grand logo */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Réalignement du header en 3 colonnes distinctes */
+        header .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* Logo à gauche, Titre au centre, Menu à droite */
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            max-height: 120px; /* Logo deux fois plus grand (anciennement 60px) */
+            width: auto;
+            justify-self: start; /* Force le logo tout à gauche */
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            margin: 0;
+            text-align: center; /* Centre parfaitement le titre au milieu du site */
+        }
+
+        /* --- Boutons du Menu à droite --- */
+        nav {
+            display: flex;
+            gap: 15px;
+            justify-self: end; /* Force le menu tout à droite */
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            background: #2e7d32;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        nav a:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Version Mobile adaptable (Responsive) --- */
+        @media (max-width: 768px) {
+            header .container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .logo {
+                max-height: 90px;
+                justify-self: center;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            nav {
+                justify-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class='container'>
+            <img src='logo.png' class='logo' alt='Logo SCEA du Bas Bocage'>
+            <h1>Miscanthus - SCEA du Bas Bocage</h1>
+            <nav>
+                <a href='index.html'>Accueil</a>
+                <a href='contact.html'>Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNIÈRE HERO (Avec miscanthus-paysage.jpg en fond) -->
+    <section class='hero'>
+        <h2>Sublimez vos jardins, préservez notre eau</h2>
+        <p>Le paillage 100 % naturel, local et sans pesticides.</p>
+        
+        <h2>LE SAVIEZ-VOUS ?</h2>
+        <p>Le miscanthus est une graminée pérenne naturelle utilisée comme paillage, litière animale et biomasse. Il limite l'évaporation de l'eau, réduit les mauvaises herbes, protège les sols et constitue une solution écologique produite localement.</p>
+        <p>Le miscanthus est très léger. Un mètre cube en vrac ne pèse qu'environ 130 kg. Vous pouvez donc charger votre remorque ou remplir votre coffre sans risque pour votre véhicule. Et au jardin, sa manipulation devient un vrai jeu d'enfant.</p>
+        
+        <a class='btn' href='contact.html'>Demander un devis</a>
+    </section>
+
+    <!-- Reste du contenu encapsulé dans un fond protecteur pour la lisibilité sur fond.jpg -->
+    <main class='container content-bg-overlay'>
+        
+        <!-- Section : Pourquoi choisir le miscanthus -->
+        <section class='why-miscanthus-section'>
+            <h2>Pourquoi choisir le miscanthus ?</h2>
+            
+            <div class='features-grid'>
+                <div class='feature-card'>
+                    <h3>💧 Économie d'eau</h3>
+                    <p>Réduit fortement les besoins d'arrosage.</p>
+                </div>
+                
+                <div class='feature-card'>
+                    <h3>🌱 Naturel</h3>
+                    <p>Produit local sans pesticides.</p>
+                </div>
+                
+                <div class='feature-card'>
+                    <h3>🛡️ Protection</h3>
+                    <p>Protège les plantations été comme hiver.</p>
+                </div>
+                
+                <div class='feature-card'>
+                    <h3>♻️ Durable</h3>
+                    <p>Longue tenue et entretien réduit.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section : Conditionnements -->
+        <div>
+            <h2>Nos conditionnements</h2>
+            <div class='cards'>
+                <div class='card'>
+                    <h3>Vrac</h3>
+                    <p>40 €/m³</p>
+                    <p><em>Note : Prix dégressif suivant la quantité commandée</em></p>
+                    <img src='vrac.jpg' class='product-img' alt='Miscanthus en vrac'>
+                    <p><strong>Livraison possible</strong><br>Devis sur demande</p>
+                </div>
+                
+                <div class='card'>
+                    <h3>Big Bag</h3>
+                    <p>50 €/m³</p>
+                    <p><em>Note : Prix dégressif suivant la quantité commandée</em></p>
+                    <img src='big-bag.jpg' class='product-img' alt='Miscanthus en Big Bag'>
+                    <p><strong>Livraison possible</strong><br>Devis sur demande</p>
+                </div>
+                
+                <div class='card'>
+                    <h3>Sac 18 kg</h3>
+                    <p>15 €</p>
+                    <p><em>Note : Prix dégressif suivant la quantité commandée</em></p>
+                    <img src='sac.jpg' class='product-img' alt='Miscanthus en sac de 18 kg'>
+                    <p><strong>Livraison possible</strong><br>Devis sur demande</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section : Ouest France -->
+        <section style="margin-top: 40px;">
+            <h2>Merci à Ouest-France !</h2>
+            <img src='article.png' alt='Article de presse Ouest-France sur la récolte de miscanthus' style='max-width:100%;height:auto;border-radius:10px;'>
+            <p style="margin-top: 10px;"><strong>Source :</strong>
+                <a href='https://www.ouest-france.fr/pays-de-la-loire/foussais-payre-85240/foussais-payre-ils-font-leur-premiere-recolte-de-miscanthus-26f0ccc6-45a1-4692-85c8-668820bf746e' target='_blank'>
+                    Article Ouest-France
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>4 Rue du Doué de Maigre Souris, 85240 Foussais-Payré | 06 98 66 00 31 | 06 24 96 44 90</footer>
+</body>
+</html>

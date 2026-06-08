@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang='fr'>
+<head>
+    <meta charset='utf-8'>
+    <title>Contact - SCEA du Bas Bocage</title>
+    <link rel='stylesheet' href='style.css'>
+    <style>
+        /* --- Style global pour le fond du site --- */
+        body {
+            background: url('fond.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Enveloppe transparente pour garantir la lisibilité --- */
+        .content-bg-overlay {
+            background-color: rgba(255, 255, 255, 0.92); /* Voile blanc pour détacher le contenu du fond */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 600px; /* Largeur idéale pour un formulaire bien lisible */
+            margin: 40px auto;
+        }
+
+        /* --- Structure globale de l'en-tête (identique à l'accueil) --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            max-height: 120px;
+            width: auto;
+            justify-self: start;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #2e7d32;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* --- Boutons du Menu --- */
+        nav {
+            display: flex;
+            gap: 15px;
+            justify-self: end;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            background: #2e7d32;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        nav a:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        /* --- Style du Formulaire --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Style du bouton d'envoi calqué sur les autres boutons du site */
+        form button {
+            background: #2e7d32;
+            color: #fff;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        form button:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        /* --- Coordonnées de contact --- */
+        .contact-info {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+        }
+
+        /* --- Version Mobile adaptable --- */
+        @media (max-width: 768px) {
+            header .container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .logo {
+                max-height: 90px;
+                justify-self: center;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            nav {
+                justify-self: center;
+            }
+            .content-bg-overlay {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class='container'>
+            <img src='logo.png' class='logo' alt='Logo SCEA du Bas Bocage'>
+            <h1>Demande de devis</h1>
+            <nav>
+                <a href='index.html'>Accueil</a>
+                <a href='contact.html'>Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenu du formulaire protégé par le voile blanc de lisibilité -->
+    <main class='content-bg-overlay'>
+        
+        <!-- FORMULAIRE CONFIGURÉ (N'oubliez pas d'y insérer votre clé Web3Forms !) -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
+            <!-- Remplacez VOTRE_CLE_ICI par la clé reçue par e-mail de Web3Forms -->
+            <input type="hidden" name="access_key" value="4d7ef628-780f-4f81-8d09-ac6602b6a00a">
+            <input type="hidden" name="subject" value="Nouveau devis Miscanthus depuis le site web">
+
+            <input type="text" name="nom" placeholder='Nom' required>
+            <input type="tel" name="telephone" placeholder='Téléphone'>
+            <input type="email" name="email" placeholder='Email' required>
+            
+            <select name="conditionnement">
+                <option value="Vrac">Vrac</option>
+                <option value="Big Bag">Big Bag</option>
+                <option value="Sac 18 kg">Sac 18 kg</option>
+            </select>
+            
+            <textarea name="message" placeholder='Votre demande' required></textarea>
+            
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <!-- Coordonnées en bas de page -->
+        <div class="contact-info">
+            <p><strong>Téléphones :</strong> 06 98 66 00 31 / 06 24 96 44 90</p>
+            <p><strong>Adresse :</strong> 4 Rue du Doué de Maigre Souris, 85240 Foussais-Payré</p>
+        </div>
+
+    </main>
+</body>
+</html>
